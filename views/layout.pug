@@ -4,7 +4,10 @@ html(lang='en')
     title HTTP Auth
     link(rel="stylesheet" type="text/css" href="/static/styles.css")
   body
-    include includes/header.pug
-    block main
-  footer
-    include includes/footer.pug
+    .pagewrap
+      .background-gradient
+        header
+          include includes/header.pug
+        block main
+        footer
+          include includes/footer.pug

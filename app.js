@@ -19,6 +19,10 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
+app.post('/', (req, res) => {
+  res.render('index', { name: req.body.name })
+})
+
 app.get('/login', (req, res) => {
   res.render('login')
 })

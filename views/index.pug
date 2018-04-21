@@ -2,16 +2,21 @@ extends layout
 
 block main
   if name
-    h1 Welcome #{name}!
-    form(action='/logout')
-      input(type='submit' value='Logout')
+    main
+      h1 Welcome #{name}!
+        form(class="dashboardForm" action="/logout")
+          .submit-buttons
+            input(type="submit" value="Logout")
   else
-    h1 Hello Stranger!
-      p Please
-        |
-        |
-        a(href="/signup") signup
-        |  or
-        |
-        a(href="/login") login
-        |.
+    main
+      h1 Hello Stranger!
+        form(class="welcomeForm" method="POST" action="/")
+          .input
+            input(type="text" placeholder="Username" name="name")
+          .input
+            input(type="text" placeholder="Password" name="password")
+          .submit-buttons
+            .submit-button
+              input(type="submit" value="Log in")
+            .submit-button
+              input(type="submit" value="Sign up" formaction="/signup" formmethod="GET")

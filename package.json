@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start" : "node app.js",
-    "db:setup" : "echo 'I will set up the database'",
-    "db:reset" : "echo 'I will reset up the database'",
+    "db:setup" : "echo 'I will set up the database eventually'",
+    "db:reset" : "echo 'I will reset the database eventually'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

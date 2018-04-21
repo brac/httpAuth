@@ -4,16 +4,17 @@ This is an Express HTTP server that allows users to signup, login and logout of 
 
 The HTTP routes render different information depending on whether the request is from an unknown visitor or a logged in user.
 
+FrontEnd
+  Login Forms
+  Signup forms
+  Dashboard
 Database
   Client
   Queries
   Schema
   Testing
 Reading, storing and encrypting cookies
-  Testing with chai-HTTP
-Color
-  PUG
-  Images
+Testing with chai-HTTP
 
 
 ## Specs
