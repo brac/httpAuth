@@ -1,13 +1,17 @@
-if name
-  h1 Welcome #{name}!
-  form(action='/logout')
-    input(type='submit' value='Logout')
-else
-  h1 Hello Stranger!
-    p Please
-      |
-      |
-      a(href="/signup") signup
-      |  or
-      |
-      a(href="/login") login
+extends layout
+
+block main
+  if name
+    h1 Welcome #{name}!
+    form(action='/logout')
+      input(type='submit' value='Logout')
+  else
+    h1 Hello Stranger!
+      p Please
+        |
+        |
+        a(href="/signup") signup
+        |  or
+        |
+        a(href="/login") login
+        |.
