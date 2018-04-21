@@ -27,21 +27,31 @@ body{
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  background: linear-gradient(#2C4562 , #22364F);
+  background: linear-gradient(#38597F , #1C2D43);
 }
 
 
 header,footer,main{
   display:flex;
+  flex-direction: column;
   justify-content: space-around;
+  margin: auto;
 }
 
-header, footer, h1{
+h1{
+  display: flex;
+  margin: auto;
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
+  padding-bottom: .5em;
+}
+
+header, footer{
   color:white;
   text-shadow: 2px 2px 4px #000000;
 }
 
-.welcomeForm, .dashboardForm{
+.form{
   display: flex;
   flex-direction: column;
   padding-top: .4em;
@@ -59,12 +69,16 @@ header, footer, h1{
   border: 1px solid #ccc;
 }
 
-.name-field{
+.top-field{
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
 }
 
-.password-field{
+.middle-field{
+  border-radius: 0px;
+}
+
+.bottom-field{
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
@@ -72,7 +86,7 @@ header, footer, h1{
   display: flex;
   flex-direction: row;
   margin: auto;
-  padding-top: .5em;
+  padding-top: 1em;
 }
 
 .submit-button{
@@ -86,4 +100,11 @@ header, footer, h1{
   border-radius: 5px;
   width: 6.8em;
   height: 2em;
+}
+
+.errorMessage{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }

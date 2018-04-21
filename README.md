@@ -36,11 +36,11 @@ Testing with chai-HTTP
       * a link to `/login`
     - and you visit `/signup`
       - you see:
-        - a form with:
-          - email
-          - password
-          - password confirmation
-          - "Signup" button
+        * a form with:
+          * email
+          * password
+          * password confirmation
+          * "Signup" button
       - and you submit the signup form
         - with no values
           - you should see the signup page again but with the error "please provide

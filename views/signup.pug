@@ -2,4 +2,15 @@ extends layout
 
 block main
   main
-    h1 Welcome to the signup page!
+    h1 Sign Up Here!
+    form(class="form" method="POST" action="/signup")
+      .input
+        input(class="input-field top-field" type="text" placeholder="Username" name="name")
+      .input
+        input(class="input-field middle-field" type="text" placeholder="Password" name="password")
+      .input
+        input(class="input-field bottom-field" type="text" placeholder="Confirm Password" name="passwordConfirm")
+      .submit-buttons
+        input(class="submit-button" type="submit" value="Sign up!")
+        input(class="submit-button" type="submit" value="Cancel" formaction="/" formmethod="GET")
+

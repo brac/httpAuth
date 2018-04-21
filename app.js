@@ -31,6 +31,10 @@ app.get('/signup', (req, res) => {
   res.render('signup')
 })
 
+app.post('/signup', (req, res) => {
+  res.render('signup', {message: 'Please provide a Username'})
+})
+
 app.get('/logout', (req, res) => {
   res.render('index')
 })
