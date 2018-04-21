@@ -35,7 +35,7 @@ Testing with chai-HTTP
       * a link to `/signup`
       * a link to `/login`
     - and you visit `/signup`
-      - you see:
+      * you see:
         * a form with:
           * email
           * password
@@ -53,10 +53,10 @@ Testing with chai-HTTP
           - a new user should be inserted into the database
           - your session cookie should be updated with the new user id
           - you should be logged in and redirected to the homepage
-    - and you visit `/login` you see:
-      - a form with:
-        - email
-        - password
+    * and you visit `/login` you see:
+      * a form with:
+        * email
+        * password
     - and you submit the login form
       - with no values
         - you should see the login page again with the error "please provide an
