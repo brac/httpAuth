@@ -30,10 +30,10 @@ Testing with chai-HTTP
 * use the `pg-promise` node package
 - implement the following user stories:
   - when you are not logged in
-    - and you visit `/` (the home page) you see:
-      - "Hello Stranger"
-      - a link to `/signup`
-      - a link to `/login`
+    * and you visit `/` (the home page) you see:
+      * "Hello Stranger"
+      * a link to `/signup`
+      * a link to `/login`
     - and you visit `/signup`
       - you see:
         - a form with:

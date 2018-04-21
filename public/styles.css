@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: arial;
 }
 html{
   height: 100%;
@@ -29,15 +30,21 @@ body{
   background: linear-gradient(#2C4562 , #22364F);
 }
 
+
 header,footer,main{
   display:flex;
   justify-content: space-around;
 }
 
+header, footer, h1{
+  color:white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
 .welcomeForm, .dashboardForm{
   display: flex;
   flex-direction: column;
-  padding-top: 1em;
+  padding-top: .4em;
 }
 
 .input{
@@ -45,12 +52,38 @@ header,footer,main{
   margin: auto;
 }
 
+.input-field{
+  padding: 1em;
+  height: 2.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.name-field{
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.password-field{
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
 .submit-buttons{
   display: flex;
   flex-direction: row;
-  padding-bottom: 1em;
   margin: auto;
+  padding-top: .5em;
 }
 
 .submit-button{
+  color: white;
+  border-top: 1px solid #8BBDE3;
+  border-bottom: 1px solid #1E2F41;
+  border-left: 1px solid #1E2F41;
+  border-right: 1px solid #1E2F41;
+  background-color: #4E86B6;
+  box-shadow: 3px 3px 3px #152032;
+  border-radius: 5px;
+  width: 6.8em;
+  height: 2em;
 }

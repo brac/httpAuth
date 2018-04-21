@@ -31,6 +31,10 @@ app.get('/signup', (req, res) => {
   res.render('signup')
 })
 
+app.get('/logout', (req, res) => {
+  res.render('index')
+})
+
 app.listen(3000, () => {
   console.log('HTTP Auth app listening on port 3000')
 })
