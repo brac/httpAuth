@@ -38,6 +38,14 @@ header,footer,main{
   margin: auto;
 }
 
+header{
+  flex: .5;
+}
+
+main, footer{
+  flex: 1;
+}
+
 h1{
   display: flex;
   margin: auto;

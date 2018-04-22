@@ -22,8 +22,8 @@ Testing with chai-HTTP
 * use node
 * ensure all your npm dependencies are listed in your `package.json`
 * use postgresql
-- design a database schema to store users
-- commit your schema in `schema.sql`
+* design a database schema to store users
+* commit your schema in `schema.sql` <!-- Did I do this right?-->
 * use the `express` node package
 * use the `body-parser` node package
 - use the `cookie-session` node package

@@ -1,13 +1,20 @@
 // jshint asi:true
 const router = require('express').Router()
-const queries = require('../database/queries')
+const { findAll } = require('../database/queries')
 
 router.get('/', (req, res) => {
   res.render('signup')
 })
 
 router.post('/', (req, res) => {
-  res.render('signup', {message: `${req.body.name}, ${req.body.password}, ${req.body.passwordConfirm}`})
+  findAll().then(
+    results => {
+      console.log(results)
+      return res.render('signup', {message: `this is working`}),
+    error => {
+      return res.render('signup', {message: error})
+      }
+    })
 })
 
 module.exports = router
