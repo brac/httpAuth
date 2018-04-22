@@ -26,6 +26,7 @@ router.post('/', (req, res) => {
   // Store data to database, render index
   createUser(user).then(
     results => {
+      console.log(req.session)
       return res.render('index', {name: user.name, message: `User Created`}),
     error => {
       return res.render('signup', {message: error})

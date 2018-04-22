@@ -10,6 +10,15 @@ const signupRoutes  = require(path.join(__dirname, '/routes/signup'))
 const loginRoutes   = require(path.join(__dirname, '/routes/login'))
 const app           = express()
 
+app.use(cookieSession({
+  name: 'session',
+  keys: 'abc123',
+  maxAge: 30  * 60 * 1000, // 30 minutes
+  httpOnly: true,          // don't let JS code access cookies
+  secure: true,            // only set cookies over https
+  ephemeral: true          // destroy cookies when the browser closes
+}))
+
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/static', express.static('public'))
 

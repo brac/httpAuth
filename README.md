@@ -41,14 +41,14 @@ Testing with chai-HTTP
           * "Signup" button
       - and you submit the signup form
         - with no values
-          - you should see the signup page again but with the error "please provide
+          * you should see the signup page again but with the error "please provide
           an email and a password to sign up"
-        - with a value in the password field that
+        * with a value in the password field that
           does not match the value in the password confirmation field
-          - you should see the signup page again but with the error "passwords do
+          * you should see the signup page again but with the error "passwords do
           not match"
         - with a valid email, and matching passwords
-          - a new user should be inserted into the database
+          * a new user should be inserted into the database
           - your session cookie should be updated with the new user id
           - you should be logged in and redirected to the homepage
     * and you visit `/login` you see:
