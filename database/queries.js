@@ -9,8 +9,17 @@ const findAll = () => {
   )
 }
 
+const findOne = () => {
+  // TODO: Find a single user based on name
+  // return db.one(`SELECT`)
+}
 
+const createUser = () => {
+  // TODO: Insert a new user into the table
+}
 
 module.exports = {
-  findAll
+  findAll,
+  findOne,
+  createUser
 }

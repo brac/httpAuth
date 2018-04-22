@@ -7,10 +7,23 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+  // TODO: Determine if all fields are present
+  if (req.body.name === '' || req.body.password === '' || req.body.passwordConfirm === '' ) {
+    return res.render('signup', { message: 'Please provide a username and password' })
+  }
+
+  // TODO: Determine if passwords match
+  if (req.body.password != req.body.passwordConfirm) {
+    return res.render('signup', { message: 'Your password did not match' })
+  }
+
+  // TODO: Determine if name is taken - stretch
+
+  // TODO: Store data to database, render index
+
   findAll().then(
     results => {
-      console.log(results)
-      return res.render('signup', {message: `this is working`}),
+      return res.render('signup', {message: `${results[0].name} and ${results[1].name}`}),
     error => {
       return res.render('signup', {message: error})
       }
