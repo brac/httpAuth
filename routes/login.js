@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  res.render('index', req.body)
+  req.session = req.body
+  console.log(req.session)
+  res.render('index', req.session)
 })
 
 module.exports = router
