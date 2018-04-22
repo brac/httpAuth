@@ -17,8 +17,8 @@ const findOne = (name) => {
 }
 
 const createUser = (user) => {
-  return db.none(`INSERT INTO users (name, password) VALUES ($1, $2)`, [user.name, user.password]).then(
-    results => results,
+  return db.one(`INSERT INTO users (name, password) VALUES ($1, $2) RETURNING id`, [user.name, user.password]).then(
+    results => results.id,
     error   => error
   )
 }

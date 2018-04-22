@@ -24,7 +24,7 @@ Testing with chai-HTTP
 * commit your schema in `schema.sql` <!-- Did I do this right?-->
 * use the `express` node package
 * use the `body-parser` node package
-- use the `cookie-session` node package
+* use the `cookie-session` node package
 * use the `pg-promise` node package
 - implement the following user stories:
   - when you are not logged in
@@ -32,25 +32,25 @@ Testing with chai-HTTP
       * "Hello Stranger"
       * a link to `/signup`
       * a link to `/login`
-    - and you visit `/signup`
+    * and you visit `/signup`
       * you see:
         * a form with:
           * email
           * password
           * password confirmation
           * "Signup" button
-      - and you submit the signup form
-        - with no values
+      * and you submit the signup form
+        * with no values
           * you should see the signup page again but with the error "please provide
           an email and a password to sign up"
         * with a value in the password field that
           does not match the value in the password confirmation field
           * you should see the signup page again but with the error "passwords do
           not match"
-        - with a valid email, and matching passwords
+        * with a valid email, and matching passwords
           * a new user should be inserted into the database
-          - your session cookie should be updated with the new user id
-          - you should be logged in and redirected to the homepage
+          * your session cookie should be updated with the new user id
+          * you should be logged in and redirected to the homepage
     * and you visit `/login` you see:
       * a form with:
         * email

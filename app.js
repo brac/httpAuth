@@ -52,8 +52,8 @@ app.post('/', (req, res) => {
 })
 
 app.get('/logout', (req, res) => {
-  res.session = {}
-  res.render('index')
+  req.session = {}
+  res.redirect('/')
 })
 
 app.listen(3000, () => {

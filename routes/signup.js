@@ -5,6 +5,10 @@ const { findAll,
         createUser } = require('../database/queries')
 
 router.get('/', (req, res) => {
+  if (req.session.name) {
+    return res.redirect('/')
+  }
+
   res.render('signup')
 })
 
@@ -25,9 +29,11 @@ router.post('/', (req, res) => {
 
   // Store data to database, render index
   createUser(user).then(
-    results => {
+    userId => {
+      req.session = user
+      req.session.userId = userId
       console.log(req.session)
-      return res.render('index', {name: user.name, message: `User Created`}),
+      return res.render('index', {name: req.session.name, message: `User Created`}),
     error => {
       return res.render('signup', {message: error})
     }
