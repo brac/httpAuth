@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
   createUser(user).then(
     userId => {
       req.session = user
-      req.session.userId = userId
+      req.session.id = userId
       console.log(req.session)
       return res.render('index', {name: req.session.name, message: `User Created`}),
     error => {

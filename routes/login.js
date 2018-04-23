@@ -26,8 +26,7 @@ router.post('/', (req, res) => {
       if (req.body.password != results.password) {
         return res.render('login', {message: 'Incorrect Password'})
       }
-
-      req.session = req.body
+      req.session = results
       res.render('index', req.session)
     },
     error =>   {return res.render('login', {message: error})}
