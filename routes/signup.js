@@ -1,4 +1,6 @@
 // jshint asi:true
+
+const bcrypt        = require('bcryptjs')
 const router = require('express').Router()
 const { findAll,
         findOne,
@@ -8,7 +10,6 @@ router.get('/', (req, res) => {
   if (req.session.name) {
     return res.redirect('/')
   }
-
   res.render('signup')
 })
 
@@ -25,18 +26,23 @@ router.post('/', (req, res) => {
     return res.render('signup', { message: 'Your password did not match' })
   }
 
-  // TODO: Determine if name is taken - stretch
 
-  // Store data to database, render index
-  createUser(user).then(
-    userId => {
-      req.session = user
-      req.session.id = userId
-      console.log(req.session)
-      return res.render('index', {name: req.session.name, message: `User Created`}),
-    error => {
-      return res.render('signup', {message: error})
-    }
+  // Hash the password with salt, then store it to the database.
+  bcrypt.genSalt(10, function(err, salt) {
+    bcrypt.hash(user.password, salt, function(err, hash) {
+      user.password = hash
+      createUser(user)
+      .then(
+        userId => {
+          user.password = ''
+          req.session = user
+          req.session.id = userId
+          return res.render('index', {name: req.session.name, message: `User Created`}),
+        error => {
+          return res.render('signup', {message: error})
+        }
+      })
+    })
   })
 })
 

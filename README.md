@@ -6,11 +6,11 @@ The HTTP routes render different information depending on whether the request is
 
 Database
   Testing
-Cookies
-  Encrypting
-    Storing encrypted passwords (read the article first)
+HTTP
+  Testing
 Testing with chai-HTTP
 
+Questions: I thought I needed to provide the salt when comparing some hashed passwords, but I didn't need to do that in my login route and things seem to be working. Is this a feature of bcryptjs? How does it do this?
 
 ## Specs
 * build this app in a new empty GitHub repository
@@ -80,7 +80,7 @@ Testing with chai-HTTP
 ### Stretch
 
 - Write tests for your express routes using `chai-http`
-- Encrypt passwords using `bcryptjs`
+* Encrypt passwords using `bcryptjs`
 * Encrypt sessions with cryptr
 
 ## Testing

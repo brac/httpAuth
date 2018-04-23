@@ -2,7 +2,6 @@
 
 const path          = require('path')
 const express       = require('express')
-const bcrypt        = require('bcryptjs')
 const Cryptr        = require('cryptr')
 const bodyParser    = require('body-parser')
 const cookieParser  = require('cookie-parser') //needed with cookieSession? - yup
@@ -59,7 +58,6 @@ function encryptSession(session) {
   if (!session) {
     session = {}
   }
-
   return cryptr.encrypt(JSON.stringify(session))
 }
 

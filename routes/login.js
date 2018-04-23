@@ -1,5 +1,6 @@
 // jshint asi:true
 
+const bcrypt        = require('bcryptjs')
 const router = require('express').Router()
 const { findAll,
         findOne,
@@ -23,13 +24,26 @@ router.post('/', (req, res) => {
         return res.render('login', {message: 'User not found' })
       }
 
-      if (req.body.password != results.password) {
-        return res.render('login', {message: 'Incorrect Password'})
-      }
-      req.session = results
-      res.render('index', req.session)
+      bcrypt.compare(req.body.password, results.password, (error, result) => {
+        if (error) {
+          console.log(error)
+          res.status(500).render('login', {message: 'Internal Error'})
+        }
+
+        if (result) {
+          results.password = ''
+          req.session = results
+          return res.render('index', req.session)
+        }
+
+        if (!result) {
+          res.render('login', {message: 'Incorrect Username or Password'})
+        }
+      })
     },
-    error =>   {return res.render('login', {message: error})}
+    error => {
+      return res.render('login', {message: error})
+    }
   )
 })
 
