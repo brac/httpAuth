@@ -5,11 +5,8 @@ This is an Express HTTP server that allows users to signup, login and logout of 
 The HTTP routes render different information depending on whether the request is from an unknown visitor or a logged in user.
 
 Database
-  Queries
   Testing
 Cookies
-  Setting
-  Reading
   Encrypting
     Storing encrypted passwords (read the article first)
 Testing with chai-HTTP
@@ -84,7 +81,7 @@ Testing with chai-HTTP
 
 - Write tests for your express routes using `chai-http`
 - Encrypt passwords using `bcryptjs`
-- Encrypt sessions with cryptr
+* Encrypt sessions with cryptr
 
 ## Testing
 
